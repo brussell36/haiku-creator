@@ -30,5 +30,9 @@ describe('Haiku', () => {
     expect(userHaiku.syllableCheck("supercalifragilisticexpialidocious")).toEqual(14);
     expect(userHaiku.syllableCheck("automatopoeia")).toEqual(6);
   });
+
+  test('should count number of syllables in a sentence', () => {
+    expect(userHaiku.sentenceCheck()).toEqual(5);
+  });
   
 });

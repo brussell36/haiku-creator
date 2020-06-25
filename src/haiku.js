@@ -8,49 +8,55 @@ export class Haiku {
   syllableCheck(word) {
     const vowelArray = ["a", "e", "i", "o", "u", "y"];
     const lowerWord = word.toLowerCase();
-    let vowelCount = 0;
+    let syllableCount = 0;
     let vowelLocationArray = [];
 
-    for (const letter of lowerWord) {
-      for(const vowel of vowelArray) {
-        if (letter === vowel) {
-          vowelLocationArray.push(letter.index);
-          vowelCount++;
+    for (let l = 0; l < lowerWord.length; l++) {
+      for(let v = 0; v < vowelArray.length; v++) {
+        if (lowerWord[l] === vowelArray[v]) {
+          vowelLocationArray.push(l);
+          syllableCount++;
         }
       }
-    } // if the index numbers of vowelLocationArray are consecutive, then remove 1 from vowelCount?
-      // index number +=1 === index number or index number -=1 === index number [1, 3, 4] => "1 + 1 = 2 =/= 3 (not consecutive) and 1 - 1 = 0 == null (not consecutive)"   ///  "3 + 1 = 4 === 4 (consecutive!)"   /// "4 + 1 = 5 ="
-    for (const index = 0; index < vowelLocationArray.length; index++) {
-      if ((vowelLocationArray[index] + 1) ===  vowelLocationArray[index + 1]) {
-        vowelCount --;
+    } 
+    console.log(vowelLocationArray);
+
+    let firstVowel = 0;
+    for (let i = 0; i < vowelLocationArray.length -1; i++) {
+      if ((vowelLocationArray[i] + 1) === vowelLocationArray[i + 1]) {
+        if (firstVowel!= 0) {
+          syllableCount --;
+        } else {
+          firstVowel++;
+        }
       }
     }
     
     if (lowerWord[lowerWord.length -1] === "e") {
-      vowelCount --;
+      syllableCount --;
     }
     
-    return vowelCount;
+    return syllableCount;
 
   }
 }
 
-1. Locate first vowel
-2. Increase vowel Count by 1, increase Syllable count by 1, 
-3. determine if firstvowel.location + 1 is also === vowel, 
-4. IF true syllableCount --, repeat step 2 - 4, 
-5. else, increase vowel count by 1. 
+// 1. Locate first vowel
+// 2. Increase vowel Count by 1, increase Syllable count by 1, 
+// 3. determine if firstvowel.location + 1 is also === vowel, 
+// 4. IF true syllableCount --, repeat step 2 - 4, 
+// 5. else, increase vowel count by 1. 
 
 
 
-list of vowel pairings:
-ee, ea, ie, ei, ai, ay, oo, ou, oi, ue, ui, uy, oa, 
+// list of vowel pairings:
+// ee, ea, ie, ei, ai, ay, oo, ou, oi, ue, ui, uy, oa, 
 
 
-queue
-ue
-eu
-ue
+// queue
+// ue
+// eu
+// ue
 
 // Count number of Vowels
 // Does not count consecutive vowels (oo, ie. ui. etc)

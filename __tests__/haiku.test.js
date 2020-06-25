@@ -22,8 +22,13 @@ describe('Haiku', () => {
     expect(userHaiku.syllableCheck("Came")).toBe(1);
   });
 
-  test('should count the syllables in first word of a sentence', () => {
-    expect(userHaiku.syllableCheck()).toBe('number');
+  test('should count the syllables in a word', () => {
+    expect(userHaiku.syllableCheck("queue")).toEqual(1);
+    expect(userHaiku.syllableCheck("biology")).toEqual(4);
+    expect(userHaiku.syllableCheck("mississippi")).toEqual(4);
+    expect(userHaiku.syllableCheck("javascript")).toEqual(3);
+    expect(userHaiku.syllableCheck("supercalifragilisticexpialidocious")).toEqual(14);
+    expect(userHaiku.syllableCheck("automatopoeia")).toEqual(6);
   });
   
 });

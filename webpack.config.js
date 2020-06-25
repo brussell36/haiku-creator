@@ -19,7 +19,7 @@ plugins: [
   new CleanWebpackPlugin(),
   new Dotenv(),
   new HtmlWebpackPlugin({
-    title: 'My Project',
+    title: 'Haiku Creator',
     template: './src/index.html',
     inject: 'body'
   })

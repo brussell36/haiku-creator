@@ -16,4 +16,8 @@ describe('Haiku', () => {
     expect(userHaiku.sentence2).toBe("They are really fluffy, YEAH!");
     expect(userHaiku.sentence3).toBe("OMG KITTENS!");
   });
+
+  test('should count the syllables in first sentence', () => {
+    expect(userHaiku.syllableCheck()).toBe('number');
+  });
 });

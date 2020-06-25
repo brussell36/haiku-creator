@@ -17,7 +17,7 @@ describe('Haiku', () => {
     expect(userHaiku.sentence3).toBe("OMG KITTENS!");
   });
 
-  test('should count the number of vowels in a word, not counting silent ending "e"', () => {
+  test('should count the number of syllables in a word, not counting silent ending "e"', () => {
     expect(userHaiku.syllableCheck("I")).toBe(1);
     expect(userHaiku.syllableCheck("Came")).toBe(1);
   });

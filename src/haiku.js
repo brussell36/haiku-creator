@@ -41,8 +41,9 @@ export class Haiku {
   sentenceCheck() {
     let sentenceSyllables = 0;
     let sentenceArray = this.sentence1.split(" ");
-    sentenceArray.forEach(function(element) {
-      sentenceSyllables += Haiku.syllableCheck(element);
+
+    sentenceArray.forEach( element=> {
+      sentenceSyllables += this.syllableCheck(element);
     }); 
     return sentenceSyllables;
   }

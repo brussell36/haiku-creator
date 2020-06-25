@@ -4,7 +4,7 @@ describe('Haiku', () => {
   let userHaiku;
 
   beforeEach( () => {
-    userHaiku = new Haiku();
+    userHaiku = new Haiku("I like kittens, YEAH!", "They are really fluffy, YEAH!", "OMG KITTENS!");
   });
   
   test('should determine if a haiku object exists', () => {
@@ -12,8 +12,8 @@ describe('Haiku', () => {
   });
 
   test('should check that the haiku has exactly 3 lines', () => {
-    expect(userHaiku.sentence1).toBe(true);
-    expect(userHaiku.sentence2).toBe(true);
-    expect(userHaiku.sentence3).toBe(true);
+    expect(userHaiku.sentence1).toBe("I like kittens, YEAH!");
+    expect(userHaiku.sentence2).toBe("They are really fluffy, YEAH!");
+    expect(userHaiku.sentence3).toBe("OMG KITTENS!");
   });
 });

@@ -17,7 +17,13 @@ describe('Haiku', () => {
     expect(userHaiku.sentence3).toBe("OMG KITTENS!");
   });
 
-  test('should count the syllables in first sentence', () => {
+  test('should count the number of vowels in a word, not counting silent ending "e"', () => {
+    expect(userHaiku.syllableCheck("I")).toBe(1);
+    expect(userHaiku.syllableCheck("Came")).toBe(2);
+  });
+
+  test('should count the syllables in first word of a sentence', () => {
     expect(userHaiku.syllableCheck()).toBe('number');
   });
+  
 });
